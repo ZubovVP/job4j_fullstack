@@ -24,12 +24,13 @@ bootRepackage {
 
 dependencies {
 // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web
-    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.4.5'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.4.5'
 // https://mvnrepository.com/artifact/org.projectlombok/lombok
     compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.20'
     compile group: 'javax.mail', name: 'mail', version: '1.4.7'
     // https://mvnrepository.com/artifact/jaf/activation
-    implementation group: 'jaf', name: 'activation', version: '1.0.2'
+    compile group: 'jaf', name: 'activation', version: '1.0.2'
     // https://mvnrepository.com/artifact/com.sun.mail/smtp
-    implementation group: 'com.sun.mail', name: 'smtp', version: '1.4.7'
+    compile group: 'com.sun.mail', name: 'smtp', version: '1.4.7'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-mail', version: '2.1.0.RELEASE'
 }

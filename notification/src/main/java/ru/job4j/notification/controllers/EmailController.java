@@ -24,13 +24,13 @@ public class EmailController {
     }
 
     @GetMapping("/read")
-    public List<Notification> checkEmail(@RequestParam("email") String email, @RequestParam("password") String password) {
-        return this.es.readMessages(email, password);
+    public List<Notification> checkEmail() {
+        return this.es.readMessages();
     }
 
     @PostMapping("/send")
     public ResponseEntity<Void> checkEmail(@RequestBody Notification notification) {
-        boolean result = this.es.write(notification.getTo(), notification.getFrom(), notification.getSubject(), notification.getBody());
+        boolean result = this.es.write(notification);
         return result ? ResponseEntity.ok().build() : ResponseEntity.badRequest().build();
 
     }

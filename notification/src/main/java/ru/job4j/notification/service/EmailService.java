@@ -28,11 +28,11 @@ public class EmailService {
         this.mail = mail;
     }
 
-    public List<Notification> readMessages(String login, String password) {
-        return this.mail.readAllMessages(login, password);
+    public List<Notification> readMessages() {
+        return this.mail.readAllMessages();
     }
 
-    public boolean write(String to, String form, String subject, String body ) {
+    public boolean write(Notification notification) {
         String password = null;
         try (InputStream in = getClass().getClassLoader().getResourceAsStream("application.properties")) {
             Properties props = new Properties();
@@ -41,6 +41,6 @@ public class EmailService {
         } catch (Exception e) {
             LOGGER.error("Failed to download password.");
         }
-        return this.mail.write(new Notification(to, form, subject, body), password);
+        return this.mail.write(notification, password);
     }
 }

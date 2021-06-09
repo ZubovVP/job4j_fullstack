@@ -12,7 +12,7 @@ import java.util.List;
  * Date: 04.06.2021.
  */
 public interface ActionsForEmail {
-    List<Notification> readAllMessages(String email, String password);
+    List<Notification> readAllMessages();
 
     boolean write(Notification email, String password);
 }
